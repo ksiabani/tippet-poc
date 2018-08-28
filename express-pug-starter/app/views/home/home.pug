@@ -1,0 +1,31 @@
+block scripts
+  include ./home.js
+
+block content
+
+  //section.page-header
+  //
+  //  h1.project-name express-pug-starter
+  //  h2.project-tagline render pug (jade) using expressjs
+  //
+  //  a#gh-index.btn(href='https://github.com/sbolel/express-pug-starter') View on GitHub
+  //  a#gh-zip.btn(href='https://github.com/sbolel/express-pug-starter/zipball/master') Download .zip
+  //  a#gh-tar.btn(href='https://github.com/sbolel/express-pug-starter/tarball/master') Download .tar.gz
+
+  // - console.log(locals.data.banner)
+
+  section.main-content
+    .container
+      form(action="/mydata" method="post")
+        .form-group
+          label(for='bannerTitle') Banner title
+          input#bannerTitle.form-control(type='text', name='title' placeholder='Enter banner title', value=locals.data.banner[0].title)
+        .form-group
+          label(for='bannerText') Banner description
+          input#bannerText.form-control(type='text', name='text' placeholder='Enter description', value=locals.data.banner[0].text)
+        .form-group
+          label(for='btnText') Button text
+          input#btnText.form-control(type='text', name='btnTxt' placeholder='Enter some text for button', value=locals.data.banner[0].btnTxt)
+          br
+          button.btn.btn-primary(type='submit') Submit
+
